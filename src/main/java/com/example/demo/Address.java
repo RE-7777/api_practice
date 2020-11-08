@@ -1,19 +1,19 @@
 package com.example.demo;
 
 public class Address {
-    private String postAddress;
+    private String zipcode;
     private String cityName;
-    public Address(String postAddress, String cityName) {
-        this.postAddress = postAddress;
+    public Address(String zipcode, String cityName) {
+        this.zipcode = zipcode;
         this.cityName = cityName;
     }
 
-    public String getpostAddress() {
-        return postAddress;
+    public String getzipcode() {
+        return zipcode;
     }
 
-    public void setpostAddress(String postAddress) {
-        this.postAddress = postAddress;
+    public void setzipcode(String zipcode) {
+        this.zipcode = zipcode;
     }
 
     public String getCityName() {

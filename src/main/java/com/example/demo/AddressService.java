@@ -7,14 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class AddressService {
     @Autowired
-    public static List<Address> findKawasaki() {
-        return Arrays.asList(new Address("1101", "川崎"));     
+    public static Address findKawasaki() {
+        return new Address("10", "川崎");     
     }
 
     @Autowired
-    public static List<Address> findYokohama() {
-        return Arrays.asList(new Address("1102", "横浜"));     
+    public static Address findYokohama() {
+        return new Address("20", "横浜");     
     }
-    
     
 }
