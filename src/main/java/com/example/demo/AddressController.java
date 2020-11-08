@@ -23,7 +23,7 @@ public class AddressController {
         Address address = null;
         if (zipcode.equals("10")) {
             address = AddressService.findKawasaki();
-        } else if(zipcode.equals("20")) {
+        } else if (zipcode.equals("20")) {
             address = AddressService.findYokohama();
         } else {
             throw new BusinessException("message");
