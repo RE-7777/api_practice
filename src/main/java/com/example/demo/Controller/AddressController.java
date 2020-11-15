@@ -1,8 +1,12 @@
-package com.example.demo;
+package com.example.demo.Controller;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.example.demo.Entity.Address;
+import com.example.demo.Exception.BusinessException;
+import com.example.demo.Service.AddressService;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
@@ -20,14 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AddressController {
     @GetMapping
     Address getItems(@RequestParam("zipcode") String zipcode) {
-        Address address = null;
-        if (zipcode.equals("10")) {
-            address = AddressService.findKawasaki();
-        } else if (zipcode.equals("20")) {
-            address = AddressService.findYokohama();
-        } else {
-            throw new BusinessException("message");
-        }
+        Address address = AddressService.findAddress(zipcode);
         return address; 
     }
 

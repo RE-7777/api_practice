@@ -23,15 +23,9 @@ import rocorock.apiPractice.Service.AddressService;
 @RequestMapping("search")
 public class mainController {
     @GetMapping
+    @GetMapping
     Address getItems(@RequestParam("zipcode") String zipcode) {
-        Address address = null;
-        if (zipcode.equals("10")) {
-            address = AddressService.findKawasaki();
-        } else if(zipcode.equals("20")) {
-            address = AddressService.findYokohama();
-        } else {
-            throw new BusinessException("message");
-        }
+        Address address = AddressService.findAddress(zipcode);
         return address; 
     }
 
